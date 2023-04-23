@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OrderService.Services;
 
 namespace OrderService
 {
@@ -18,6 +19,7 @@ namespace OrderService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IOrderService, OrderService.Services.OrderService>();
             services.AddControllers();
         }
 
